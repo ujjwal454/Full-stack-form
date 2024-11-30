@@ -15,6 +15,15 @@ function resetForm() {
   formInput.forEach((inp) => {
     inp.value = "";
   });
+
+  formValues = {
+    firstName: "",
+    lastName: "",
+    username: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  };
 }
 
 formInput.forEach((inp) => {
