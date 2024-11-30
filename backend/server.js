@@ -1,6 +1,6 @@
 const express = require("express");
-const createUserTable = require("./db/user/user-table");
-const userRoutes = require("./user");
+const createUserTable = require("./src/db/user/user-table");
+const userRoutes = require("./src/user");
 
 const app = express();
 const port = 3000;
