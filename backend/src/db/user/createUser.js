@@ -15,7 +15,7 @@ VALUES ($1, $2, $3, $4, $5) RETURNING id, firstName, lastName, username, email;`
     return newUser;
   } catch (error) {
     console.error("Error creating user:", error);
-    throw new Error("Unable to create user");
+    throw new Error(error);
   }
 };
 

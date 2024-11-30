@@ -12,16 +12,23 @@ router.post("/create", async (req, res) => {
 
   try {
     const hashedPassword = await bcrypt.hash(password, 10);
+
     const data = {
       firstName,
       lastName,
       username,
       email,
-      hashedPassword,
+      password: hashedPassword,
     };
+
     const user = await createUser(data);
-    res.status(201).json({ message: "user created", user });
-  } catch (error) {}
+
+    return res.status(201).json({ message: "User created successfully", user });
+  } catch (error) {
+    return res
+      .status(400)
+      .json({ error: "An error occurred", details: error.message });
+  }
 });
 
 module.exports = router;
